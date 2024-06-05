@@ -1,0 +1,37 @@
+services:
+  hub:
+    image: viperh/paper-mc
+
+    environment:
+      - EULA=true
+      
+
+    ports:
+      - "25566:25565"
+
+    volumes:
+      - ./paper-global-hub.yml:/config/paper-global.yml
+      - ./server.properties:/server.properties
+
+  survival:
+    image: viperh/paper-mc
+
+    environment:
+      - EULA=true
+
+
+    ports:
+      - "25567:25565"
+
+    volumes:
+      - ./paper-global-survival.yml:/config/paper-global.yml
+      - ./server.properties:/server.properties
+
+  proxy:
+    image: viperh/velocity
+
+    ports:
+      - "25565:25577"
+
+    volumes:
+      - ./velocity.toml:/velocity.toml
