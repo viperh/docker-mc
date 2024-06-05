@@ -92,7 +92,7 @@ player-auto-save:
 proxies:
   velocity:
     enabled: true
-    online-mode: false
+    online-mode: true
     secret: 'forwarding.secret'
 scoreboards:
   save-empty-scoreboard-teams: false

@@ -10,15 +10,13 @@ ENV BUILD=latest
 ENV EULA=false
 
 
-COPY ./script.sh /usr/local/bin/script.sh
-
-RUN chmod +x /usr/local/bin/script.sh
-
-
 VOLUME ["/data"]
 
 WORKDIR /data
 
+COPY ./script.sh /usr/local/bin/script.sh
+
+RUN chmod +x /usr/local/bin/script.sh
 
 ENTRYPOINT ["/usr/local//bin/script.sh"]
  
